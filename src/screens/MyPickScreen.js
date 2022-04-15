@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Dimensions, Modal } from "react-native";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
 import MapView from "react-native-maps";
 import PropTypes from "prop-types";
 
-import { getMyPicks } from "../../util/api/myPick";
+import { getMyPicks } from "../util/api/myPick";
 import { userState } from "../states/userState";
-import { pickState } from "../states/pickState";
+import { picksState, pickState } from "../states/pickState";
 import NewButton from "../components/Button";
 import MarkerModalDetail from "../components/MarkerModal";
 import MESSAGE from "../constants/message";

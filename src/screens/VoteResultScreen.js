@@ -4,7 +4,7 @@ import { CommonActions } from "@react-navigation/routers";
 import { useRecoilValue } from "recoil";
 import PropTypes from "prop-types";
 
-import { getVoteResultApi, saveFinalPickApi } from "../../util/api/vote";
+import { getVoteResultApi, saveFinalPickApi } from "../util/api/vote";
 import { userState } from "../states/userState";
 import { voteState } from "../states/voteState";
 import StyledButton from "../components/Button";

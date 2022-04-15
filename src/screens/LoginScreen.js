@@ -13,7 +13,7 @@ import {
 import PropTypes from "prop-types";
 
 import getEnvVars from "../../environment";
-import { getLoginApi } from "../../util/api/user";
+import { getLoginApi } from "../util/api/user";
 import { firebaseConfig } from "../config/firebaseConfig";
 import { userState } from "../states/userState";
 import axios from "../config/axiosConfig";

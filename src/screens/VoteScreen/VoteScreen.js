@@ -13,7 +13,7 @@ import MapView from "react-native-maps";
 import { CommonActions } from "@react-navigation/routers";
 import PropTypes from "prop-types";
 
-import { getPicksApi, postVotePickApi } from "../../../util/api/vote";
+import { getPicksApi, postVotePickApi } from "../../util/api/vote";
 import { getMyPicks } from "../../../util/api/myPick";
 import StyledButton from "../../components/Button";
 import { userState } from "../../states/userState";

@@ -36,6 +36,7 @@
 - Styled Component
 <br>
 <br>
+
 ## **Back**
 - Node js
 - MongoDB
@@ -125,7 +126,7 @@ FIREBASE_CLIENT_ID=YOUR_FIREBASE_CLIENT_ID
 <br>
 
 - **Make a plan**<br>
-    <img src="https://user-images.githubusercontent.com/83581529/159538846-6a733eae-6451-4d68-a4d4-5048e4dbc860.gif" width="180">
+<img src="https://user-images.githubusercontent.com/83581529/159538846-6a733eae-6451-4d68-a4d4-5048e4dbc860.gif" width="180">
     - 약속 시간, 장소, 약속날 몇군데를 갈지 pick의 숫자를 정해주고, 해당 서비스에 가입되어 있는 친구의 메일을 입력하면 약속이 생성됩니다.<br>
 <br>
 <br>

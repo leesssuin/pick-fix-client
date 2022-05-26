@@ -1,4 +1,4 @@
-import axios from "../../src/config/axiosConfig";
+import axios from "../../config/axiosConfig";
 
 export const checkEmailApi = async (email) => {
   const response = await axios.post("/users/email", {

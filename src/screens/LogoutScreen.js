@@ -7,7 +7,6 @@ import axios from "../config/axiosConfig";
 import PropTypes from "prop-types";
 
 import StyledButton from "../components/Button";
-import { pickState } from "../states/pickState";
 import { planState } from "../states/planState";
 import { userState } from "../states/userState";
 import { voteState } from "../states/voteState";
@@ -15,10 +14,9 @@ import MESSAGE from "../constants/message";
 import SCREEN from "../constants/screen";
 
 function LogoutScreen({ navigation }) {
-  const resetPickState = useResetRecoilState(pickState);
   const resetPlanState = useResetRecoilState(planState);
   const resetUserState = useResetRecoilState(userState);
-  const restVoteState = useResetRecoilState(voteState);
+  const resetVoteState = useResetRecoilState(voteState);
 
   const handleLogoutButtonClick = () => {
     Alert.alert(MESSAGE.LOGOUT_ALERT_TITLE, MESSAGE.LOGOUT_ALERT, [
@@ -30,10 +28,9 @@ function LogoutScreen({ navigation }) {
 
           axios.defaults.headers.Authorization = undefined;
 
-          resetPickState();
           resetPlanState();
           resetUserState();
-          restVoteState();
+          resetVoteState();
 
           navigation.dispatch(
             CommonActions.reset({

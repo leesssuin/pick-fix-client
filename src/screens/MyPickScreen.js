@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Dimensions, Modal } from "react-native";
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
+import { useRecoilValue, useRecoilValueLoadable } from "recoil";
 import MapView from "react-native-maps";
 import PropTypes from "prop-types";
 
-import { getMyPicks } from "../util/api/myPick";
 import { userState } from "../states/userState";
-import { picksState, pickState } from "../states/pickState";
+import { pickState } from "../states/pickState";
 import NewButton from "../components/Button";
 import MarkerModalDetail from "../components/MarkerModal";
-import MESSAGE from "../constants/message";
 import StyledMarker from "../components/Marker";
 import SCREEN from "../constants/screen";
+import MESSAGE from "../constants/message";
 
 function MyPickScreen({ navigation }) {
   const user = useRecoilValue(userState);
   const userId = user.userId;
-  const [picks, setPicks] = useRecoilState(pickState);
+  const [picks, setPicks] = useState(null);
 
   const [clickedPick, setClickedPick] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
+  const response = useRecoilValueLoadable(pickState(userId));
+
   useEffect(() => {
     const getMyPickApi = async () => {
       try {
-        const myPicks = await getMyPicks(userId);
-
-        setPicks(myPicks.data);
+        if (response.state === "hasValue") {
+          setPicks(response.contents);
+        }
       } catch (err) {
         alert(MESSAGE.ERROR);
       }
     };
 
     getMyPickApi();
-  }, []);
+  }, [response.state]);
 
   const handleNewButtonClick = (userId) => {
     navigation.navigate(SCREEN.NEW_MY_PICK_SCREEN, { userId: userId });

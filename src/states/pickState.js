@@ -1,16 +1,11 @@
-import { atom, selectorFamily } from "recoil";
+import { selectorFamily } from "recoil";
 import { getMyPicks } from "../util/api/myPick";
 
-export const pickState = atom({
-  key: "picks",
-  default: {},
-});
+export const pickState = selectorFamily({
+  key: "pickState",
+  get: (userId) => async () => {
+    const result = await getMyPicks(userId);
 
-// export const picksState = selectorFamily({
-//   key: "pick",
-//   get: (userId) => async () => {
-//     console.log(userId);
-//     const result = await getMyPicks(userId);
-//     return result.data;
-//   },
-// });
+    return result.data;
+  },
+});

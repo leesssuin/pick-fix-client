@@ -8,7 +8,7 @@ import * as ImagePicker from "expo-image-picker";
 import PropTypes from "prop-types";
 
 import getEnvVars from "../../environment";
-import { saveNewPick } from "../../util/api/myPick";
+import { saveNewPick } from "../util/api/myPick";
 import { userState } from "../states/userState";
 import { pickState } from "../states/pickState";
 import StyledButton from "../components/Button";
@@ -76,7 +76,11 @@ function NewMyPickScreen({ navigation }) {
     });
 
     if (!result.cancelled) {
-      setImageFile(result.uri);
+      setImageFile({
+        uri: result.uri,
+        type: "multipart/form-data",
+        name: restaurantName,
+      });
     }
   };
 

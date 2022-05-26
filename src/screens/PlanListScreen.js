@@ -4,8 +4,8 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import asyncStorage from "@react-native-async-storage/async-storage";
 import PropTypes from "prop-types";
 
-import { getUserInfoApi } from "../../util/api/user";
-import { getPlanList } from "../../util/api/planList";
+import { getUserInfoApi } from "../util/api/user";
+import { getPlanList } from "../util/api/planList";
 import { userState } from "../states/userState";
 import { planState } from "../states/planState";
 import PlanList from "../components/List";

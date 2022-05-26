@@ -13,7 +13,7 @@ import { TextInput } from "react-native-gesture-handler";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import PropTypes from "prop-types";
 
-import { checkEmailApi, makeAPlanApi } from "../../../util/api/makeAPlan";
+import { checkEmailApi, makeAPlanApi } from "../../util/api/makeAPlan";
 import getEnvVars from "../../../environment";
 import StyledButton from "../../components/Button";
 import PlanDate from "../../components/Date";

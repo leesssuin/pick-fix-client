@@ -1,4 +1,4 @@
-import axios from "../../src/config/axiosConfig";
+import axios from "../../config/axiosConfig";
 
 export const getMyPicks = async (userId) => {
   const response = await axios.get(`/users/${userId}/mypick`);
